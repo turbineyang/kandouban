@@ -1,7 +1,7 @@
 #-*-coding:utf-8 -*-
-from flask import Flask
-
-__auther__ = "yagger"
+#keywords
+# 装饰器
+# *args, **kwargs
 
 #不带参数的装饰器
 
@@ -44,10 +44,12 @@ def bar():
 #当接受的参数不确定时，用*args数组来表示
 def func_args(arg, *args):
     print("arg is %s"%arg)
+
     for i in args:
         print("args is %s"%i)
 
-args = ["dog","cat"]
+# args = ["dog","cat"]
+args = ("dog","cat")
 # func_args("pig", "dog", "cat")
 # func_args("pig", *args)
 

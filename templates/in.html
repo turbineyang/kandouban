@@ -1,8 +1,9 @@
 {% extends "bootstrap/base.html" %}
-{% block title %} Flasqqqk {% endblock %}
+{% import'bootstrap/wtf.html' as wtf %}
+
+{% block title %} 看豆瓣 {% endblock %}
 
 {% block navbar %}
-
 <div class="navbar navbar-inverse" style="border: 0px;border-radius: 0px;box-shadow: 0px 5px 5px #888888; background-color: rgba(34, 34, 34, 0)" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -26,3 +27,20 @@
 </div>
 {% endblock %}
 
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+{#    {% block page_content %}{% endblock %}#}
+</div>
+<div class="container">
+    <div class="page-header" style="border-bottom: 0px">
+        <h1>Hello {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+    </div>
+</div>
+{{ wtf.quick_form(form) }}
+{% endblock %}

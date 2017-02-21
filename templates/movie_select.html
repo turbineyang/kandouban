@@ -1,33 +1,104 @@
 {% extends 'bootstrap/base.html' %}
 {% block content %}
 <style>
-img{
+body{
+    background-color: rgba(31, 30, 28, 0.9);
+}
+.col-md-3 > img{
     height: 240px;
     width: 180px;
     position: relative;
-    z-index: 0;
+    opacity: 1;
+}
+
+
+.hid{
+    opacity: 1;
+    z-index: 1;
+    width: 330px;
+    height: 440px;
+}
+
+.test{
+    opacity: 0;
+    z-index: -1;
 }
 .col-md-3{
     padding: 5px 10px;
 }
-img:hover{
+
+.right{
+    width:360px;
+    height: 740px;
+}
+
+.col-md-3 > img:hover{
     -webkit-animation: bigger 0.3s;
     -webkit-animation-fill-mode: forwards;
-    z-index: 1
+    z-index: 2;
 }
+
 @-webkit-keyframes bigger{
 
     0%   {width: 180px; height: 240px}
-    100% {width: 330px; height: 440px;}
+    100% {width: 330px; height: 440px;opacity: 0.1}
 }
 
+.text{
+    color:rgba(208, 194, 194, 0.89);
+    position: absolute;
+    overflow: hidden ;
+    word-break: break-all;
+    top:5px;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+
+.border{
+    border: 2px solid red;
+}
+.col-md-3 >.container{
+    .center-block()
+}
 </style>
+<script type="text/javascript" src="/static/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("img").click(function(){
+  $(this).toggleClass("border");
+  });
+  $("img").mouseenter(function(){
+        $(this).next().removeClass('test');
+         $(this).next().addClass('hid');
+  $("img").mouseleave(function () {
+      $(this).next().removeClass('hid');
+      $(this).next().addClass('test');
+
+  })
+
+  });
+{#  $("#father").mouseleave(function () {#}
+{#      $("#test").removeClass("hid")#}
+{#  })#}
+});
+
+</script>
+
 <div class="container">
     <div class="row">
       <div class="col-md-8">
         <div class="row">
-          <div class="col-md-3"><img src="/static/1.jpg"></div>
-          <div class="col-md-3"><img src="/static/2.jpg"></div>
+          <div class="col-md-3">
+              <img alt="看豆瓣" id="father" src="/static/1.jpg">
+              <div class="test container text" >
+          曾制作过《小黄人》的环球公司和Illumination Entertainment今天公布了他们一部新的动画电影档期和配音阵容。该片堪称动物界的“达人秀”和“好声音”，片中会用到超过85首热门歌曲！
+　　这部动画片叫做《歌唱秀》（Sing），将于2016年12月21日上映。马修·麦康纳希（Matthew McConaughey）为剧院老板巴斯特（Buster Moon）——一只考拉配音，这家剧院是他父亲建立的，曾经十分辉煌，但现在门庭冷落。为了重振剧院，考拉经理决定举办一场全世界最伟大的歌唱大赛，冠军将获得10万美元的奖金！这在动物王国已经算是巨款了！
+　　这场歌唱大赛最终选出了五位决赛选手，他们分别是：
+　　瑞茜·威瑟斯彭（Reese Witherspoon）配音的猪妈妈罗茜塔（Rosita），她年轻时一直有音乐梦想，后来一窝生了25只猪仔后梦想就烟消云散了
+          </div>
+          </div>
+          <div class="col-md-3"><img alt="看豆瓣" src="/static/2.jpg"></div>
           <div class="col-md-3"><img src="/static/3.jpg"></div>
           <div class="col-md-3"><img src="/static/4.jpg"></div>
         </div>
@@ -44,7 +115,8 @@ img:hover{
           <div class="col-md-3"><img src="/static/12.jpg"></div>
         </div>
       </div>
-      <div class="col-md-4" style="border: 2px solid black;width: 33%;height: 600px;margin: 5px 0px;"></div>
+      <div class="col-md-4" ><img class="right" alt="看豆瓣" src="/static/21.jpg">
+      </div>
     </div>
 
 </div>

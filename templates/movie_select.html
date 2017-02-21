@@ -1,0 +1,51 @@
+{% extends 'bootstrap/base.html' %}
+{% block content %}
+<style>
+img{
+    height: 240px;
+    width: 180px;
+    position: relative;
+    z-index: 0;
+}
+.col-md-3{
+    padding: 5px 10px;
+}
+img:hover{
+    -webkit-animation: bigger 0.3s;
+    -webkit-animation-fill-mode: forwards;
+    z-index: 1
+}
+@-webkit-keyframes bigger{
+
+    0%   {width: 180px; height: 240px}
+    100% {width: 330px; height: 440px;}
+}
+
+</style>
+<div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3"><img src="/static/1.jpg"></div>
+          <div class="col-md-3"><img src="/static/2.jpg"></div>
+          <div class="col-md-3"><img src="/static/3.jpg"></div>
+          <div class="col-md-3"><img src="/static/4.jpg"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"><img src="/static/5.jpg"></div>
+          <div class="col-md-3"><img src="/static/6.jpg"></div>
+          <div class="col-md-3"><img src="/static/7.jpg"></div>
+          <div class="col-md-3"><img src="/static/8.jpg"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"><img src="/static/9.jpg"></div>
+          <div class="col-md-3"><img src="/static/10.jpg"></div>
+          <div class="col-md-3"><img src="/static/11.jpg"></div>
+          <div class="col-md-3"><img src="/static/12.jpg"></div>
+        </div>
+      </div>
+      <div class="col-md-4" style="border: 2px solid black;width: 33%;height: 600px;margin: 5px 0px;"></div>
+    </div>
+
+</div>
+{% endblock %}

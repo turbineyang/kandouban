@@ -1,0 +1,55 @@
+{% extends "bootstrap/base.html" %}
+{% import'bootstrap/wtf.html' as wtf %}
+
+{% block title %} 看豆瓣 {% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" style="border: 0px;border-radius: 0px;box-shadow: 0px 5px 5px #888888; background-color: #545652;min-height: 30px" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+        <!--<button class=" navbar-toggle" type="button" data-toggle="collapse" data-target=".narbar-collapse">-->
+            <!--<span class="sr-only"> nav</span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+        <!--</button>-->
+        <a class="navbar-brand" href="#" style="padding: 5px 15px; height: 30px" >看豆瓣</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#" style="padding: 5px 15px">电影</a></li>
+                <li><a href="#" style="padding: 5px 15px">读书</a></li>
+                <li><a href="#" style="padding: 5px 15px">同城</a></li>
+                <li><a href="#" style="padding: 5px 15px">小组</a></li>
+            </ul>
+            <ul class="nav navbar-right">
+                <li><a href="#" style="color: #9d9d9d; float:right; margin-right: 15px; padding: 5px 15px;line-height: 20px">登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-success">
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+{#    {% block page_content %}{% endblock %}#}
+</div>
+<div class="container">
+    <div class="page-header" style="border-bottom: 0px">
+        <h1>Hello {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+    </div>
+</div>
+{{ wtf.quick_form(form) }}
+<style>
+form{
+    margin: 0px 20px;
+}
+
+</style>
+{% endblock %}

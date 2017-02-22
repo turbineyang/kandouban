@@ -1,6 +1,70 @@
 {% extends "bootstrap/base.html" %}
 {% block navbar %}
 <style>
+
+body{
+    background-color: rgba(31, 30, 28, 0.9);
+}
+.col-md-3 > img{
+    height: 240px;
+    width: 180px;
+    position: relative;
+    opacity: 1;
+}
+
+.hid{
+    opacity: 1;
+    z-index: 1;
+    width: 330px;
+    height: 440px;
+}
+
+.test{
+    opacity: 0;
+    z-index: -1;
+}
+
+.col-md-3{
+    padding: 5px 10px;
+}
+
+.pic-right{
+    width:390px;
+    height: 740px;
+}
+
+.col-md-3 > img:hover{
+    -webkit-animation: bigger 0.3s;
+    -webkit-animation-fill-mode: forwards;
+    z-index: 2;
+}
+
+@-webkit-keyframes bigger{
+
+    0%   {width: 180px; height: 240px}
+    100% {width: 330px; height: 440px;opacity: 0.1}
+}
+
+.text{
+    color:rgba(208, 194, 194, 0.89);
+    position: absolute;
+    overflow: hidden ;
+    word-break: break-all;
+    top:5px;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+.border{
+    border: 4px solid #1c674e;
+
+}
+
+
+
+.col-md-3 >.container{
+    .center-block()
+}
 .mynav{
     color: rgba(241, 241, 241, 0.7);
 
@@ -41,7 +105,7 @@
                 <li><a class="mynav" href="#" >小组</a></li>
             </ul>
             <ul class="nav navbar-right">
-                <li><a class="mynav mynav-right" href="#" >登录</a></li>
+                <li><a class="mynav mynav-right" href={{ url_for('login') }} >登录</a></li>
             </ul>
         </div>
     </div>
@@ -49,11 +113,15 @@
 {% endblock %}
 
 {% block content %}
-
 <style>
-{#body{#}
-{#    overflow-y: hidden;#}
-{#}#}
+.nav > li > a:hover,
+.nav > li > a:focus,
+.navbar-header > a:hover {
+{#    text-decoration: none;#}
+    color: white;
+{#    background-color: rgba(0,0,0,0);#}
+}
+
 
 .container-fluid{
     padding-right: 0px;
@@ -73,15 +141,16 @@
     padding-left: 0px;
 }
 .carousel-control{
-    padding:35% 0px;
+    padding:38% 0px;
     font-size: 100px;
     opacity: .3;
+    width: 5%;
 }
 
 
 </style>
 <div class="container-fluid">
-  <div class="col-md-8" >
+  <div class="col-md-12" >
 		<div class="span12">
 			<div class="carousel slide" id="carousel-485604">
 				<ul class="carousel-indicators">
@@ -94,46 +163,106 @@
 				</ul>
 				<div class="carousel-inner">
 					<div class="item">
+                        <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3">
+              <img alt="看豆瓣" src="/static/1.jpg">
+              <div class="test container text" >
+         {{ movie_abstract }}
+          </div>
+          </div>
+          <div class="col-md-3"><img src="/static/2.jpg"></div>
+          <div class="col-md-3"><img src="/static/3.jpg"></div>
+          <div class="col-md-3"><img src="/static/4.jpg"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"><img src="/static/5.jpg"></div>
+          <div class="col-md-3"><img src="/static/6.jpg"></div>
+          <div class="col-md-3"><img src="/static/7.jpg"></div>
+          <div class="col-md-3"><img src="/static/8.jpg"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"><img src="/static/9.jpg"></div>
+          <div class="col-md-3"><img src="/static/10.jpg"></div>
+          <div class="col-md-3"><img src="/static/11.jpg"></div>
+          <div class="col-md-3"><img src="/static/12.jpg"></div>
+        </div>
+      </div>
+      <div class="col-md-4" ><img class="pic-right" alt="看豆瓣" src="/static/21.jpg">
+      </div>
+    </div>
 
-						<img alt="" src="/static/pic3.jpg" />
-						<div class="carousel-caption">
-							<h4>
-								棒球
-							</h4>
-							<p>
-								棒球运动是一种以棒打球为主要特点，集体性、对抗性很强的球类运动项目，在美国、日本尤为盛行。
-							</p>
-						</div>
+</div>
 					</div>
 					<div class="item active">
-						<img alt="" src="/static/pic2.jpg" />
-						<div class="carousel-caption">
-							<h4>
-								冲浪
-							</h4>
-							<p>
-								冲浪是以海浪为动力，利用自身的高超技巧和平衡能力，搏击海浪的一项运动。运动员站立在冲浪板上，或利用腹板、跪板、充气的橡皮垫、划艇、皮艇等驾驭海浪的一项水上运动。
-							</p>
-						</div>
-						<grammarly>
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-						</grammarly>
+                        <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3">
+              <img alt="看豆瓣" src="/static/1.jpg">
+              <div class="test container text" >
+         {{ movie_abstract }}
+          </div>
+          </div>
+          <div class="col-md-3"><img src="/static/2.jpg"></div>
+          <div class="col-md-3"><img src="/static/3.jpg"></div>
+          <div class="col-md-3"><img src="/static/4.jpg"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"><img src="/static/5.jpg"></div>
+          <div class="col-md-3"><img src="/static/6.jpg"></div>
+          <div class="col-md-3"><img src="/static/7.jpg"></div>
+          <div class="col-md-3"><img src="/static/8.jpg"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"><img src="/static/9.jpg"></div>
+          <div class="col-md-3"><img src="/static/10.jpg"></div>
+          <div class="col-md-3"><img src="/static/11.jpg"></div>
+          <div class="col-md-3"><img src="/static/12.jpg"></div>
+        </div>
+      </div>
+      <div class="col-md-4" ><img class="pic-right" alt="看豆瓣" src="/static/21.jpg">
+      </div>
+    </div>
+
+</div>
 					</div>
 					<div class="item">
-						<img alt="" src="/static/pic1.jpg" />
-						<div class="carousel-caption">
-							<h4>
-								自行车
-							</h4>
-							<p>
-								以自行车为工具比赛骑行速度的体育运动。1896年第一届奥林匹克运动会上被列为正式比赛项目。环法赛为最著名的世界自行车锦标赛。
-							</p>
-						</div>
+                        <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3">
+              <img alt="看豆瓣" src="/static/1.jpg">
+              <div class="test container text" >
+         {{ movie_abstract }}
+          </div>
+          </div>
+          <div class="col-md-3"><img src="/static/2.jpg"></div>
+          <div class="col-md-3"><img src="/static/3.jpg"></div>
+          <div class="col-md-3"><img src="/static/4.jpg"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"><img src="/static/5.jpg"></div>
+          <div class="col-md-3"><img src="/static/6.jpg"></div>
+          <div class="col-md-3"><img src="/static/7.jpg"></div>
+          <div class="col-md-3"><img src="/static/8.jpg"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"><img src="/static/9.jpg"></div>
+          <div class="col-md-3"><img src="/static/10.jpg"></div>
+          <div class="col-md-3"><img src="/static/11.jpg"></div>
+          <div class="col-md-3"><img src="/static/12.jpg"></div>
+        </div>
+      </div>
+      <div class="col-md-4" ><img class="pic-right" alt="看豆瓣" src="/static/21.jpg">
+      </div>
+    </div>
+
+</div>
 					</div>
                 <a data-slide="prev" href="#carousel-485604" class="left carousel-control" style="">‹</a>
                 <a data-slide="next" href="#carousel-485604" class="right carousel-control">›</a>
@@ -142,4 +271,26 @@
 		</div>
   </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+<script type="text/javascript">
+$(document).ready(function(){
+  $("img").click(function() {
+      $(this).toggleClass("border");
+  });
+  $("img").mouseenter(function(){
+        $(this).next().removeClass('test');
+         $(this).next().addClass('hid');
+  $("img").mouseleave(function () {
+      $(this).next().removeClass('hid');
+      $(this).next().addClass('test');
+
+  });
+
+  });
+  });
+
+</script>
 {% endblock %}

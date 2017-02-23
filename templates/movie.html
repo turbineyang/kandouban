@@ -6,10 +6,13 @@ body{
     background-color: rgba(31, 30, 28, 0.9);
 }
 .col-md-3 > img{
-    height: 240px;
+{#    width: 95%;#}
     width: 180px;
+    height: 240px;
     position: relative;
     opacity: 1;
+    top:5px;
+    bottom:5px;
 }
 
 .hid{
@@ -24,12 +27,17 @@ body{
     z-index: -1;
 }
 
+.col-md-4{
+    width: 33.3%;
+}
 .col-md-3{
     padding: 5px 10px;
 }
 
 .pic-right{
-    width:390px;
+    width:380px;
+    position: relative;
+    top:10px;
     height: 740px;
 }
 
@@ -62,7 +70,7 @@ body{
 
 
 
-.col-md-3 >.container{
+.col-md-3 {
     .center-block()
 }
 .mynav{
@@ -133,10 +141,10 @@ body{
     display: -webkit-box;
     position:relative;
 {#    top: -30px;#}
-    height: 750px;
+    height: auto;
 }
 .col-md-8{
-    width: auto;
+    width: 66.6%;
     padding-right: 0px;
     padding-left: 0px;
 }
@@ -214,8 +222,8 @@ body{
         <div class="row">
           <div class="col-md-3"><img src="/static/5.jpg"></div>
           <div class="col-md-3"><img src="/static/6.jpg"></div>
-          <div class="col-md-3"><img src="/static/7.jpg"></div>
-          <div class="col-md-3"><img src="/static/8.jpg"></div>
+        <div class="col-md-3"><img src="/static/7.jpg"></div>
+         <div class="col-md-3"><img src="/static/8.jpg"></div>
         </div>
         <div class="row">
           <div class="col-md-3"><img src="/static/9.jpg"></div>
